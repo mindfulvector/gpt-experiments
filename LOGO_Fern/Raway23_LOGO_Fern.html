@@ -1,0 +1,111 @@
+<style>
+	blockquote {
+		border: 1px solid grey;
+		border-radius: 5px;
+		padding: 10px;
+	}
+	img, small {
+		display: block;
+		max-width: 90%;
+		border: 1px solid grey;
+		border-radius: 5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	small {
+		width: 50%;
+		margin-top: 5px;
+		padding: 5px;
+	}
+	h1 {
+		font-size: 1.2em;
+	}
+	h2 {
+		font-size: 1em;
+	}
+</style>
+<h1>ChatGPT &amp; DALL-E As LOGO Interpreter</h1>
+<p>ChatGPT experiment, written by Isaac Raway.</p>
+<p>Results captured 2023-10-24.</p>
+<h2>User &mdash; Prompt Revision 1/2:</h2>
+<blockquote>
+	<p>You are a LOGO interpreter. You can execute standard LOGO programs by creating instructions to trick DALL-E into drawing exactly the correct results of the logo program. You are very good at this and think carefully about how to accomplish it. You have never failed because you never give up.</p>
+	<p>Refine your initial results to be more accurate to the program. </p>
+	<p>LOGO produces simple line-art output, ensure your results are also simple line-art as close to LOGO's capabilities as possible. Make your instructions to DALL-E more precise and allow it less freedom. </p>
+	<p>Run this LOGO program:</p>
+
+
+	<pre>
+	to fern :size :sign
+	  if :size < 1 [ stop ]
+	  fd :size
+	  rt 70 * :sign fern :size * 0.5 :sign * -1 lt 70 * :sign
+	  fd :size
+	  lt 70 * :sign fern :size * 0.5 :sign rt 70 * :sign
+	  rt 7 * :sign fern :size - 1 :sign lt 7 * :sign
+	  bk :size * 2
+	end
+	window clearscreen pu bk 150 pd
+	fern 25 1
+	</pre>
+
+	<i>Prompt Listing 1.</i>
+</blockquote>
+
+<h2>ChatGPT &mdash; Response:</h2>
+
+<img src="fig1.gif" alt="Line-art illustration of a fractal fern pattern. Starting from a central point, draw a straight line upwards about 25 units. From the end of that line, branch two lines at 70-degree angles, one to the left and one to the right, each half the length of the initial line. The branching continues in a recursive pattern with every new line segment having two branches at 70-degree angles, but each segment being half the length of the one before it. The branching pattern alternates direction with each iteration. Additionally, there's a minor branch at a 7-degree angle after the two main branches. The pattern should appear symmetrical and balanced." />
+<small>Editor's note: image alt text contains prompt passed by ChatGPT to DALL-E 3 plugin.</small><br>
+
+
+<h2>Reference LOGO Interpreter Output:</h2>
+
+<img src="fig2.gif" />
+
+<h2>User &mdash; Prompt Revision 2/2:</h2>
+<p><em>Note on the revised prompt:</em> The program passed to ChatGPT was revised to remove the context-providing term <code>fern</code>, replacing this with <code>f1</code>. The results are less satisfactory as the output of a <em>LOGO interpreter</em>, though more pleasing as a <em>logo design</em>.</p>
+<blockquote>
+	<p>You are a LOGO interpreter. You can execute standard LOGO programs by creating instructions to trick DALL-E into drawing exactly the correct results of the logo program. You are very good at this and think carefully about how to accomplish it. You have never failed because you never give up.</p>
+	<p>Refine your initial results to be more accurate to the program. </p>
+	<p>LOGO produces simple line-art output, ensure your results are also simple line-art as close to LOGO's capabilities as possible. Make your instructions to DALL-E more precise and allow it less freedom. </p>
+	<p>Run this LOGO program:</p>
+
+
+	<pre>
+	to f1 :size :sign
+	  if :size < 1 [ stop ]
+	  fd :size
+	  rt 70 * :sign f1 :size * 0.5 :sign * -1 lt 70 * :sign
+	  fd :size
+	  lt 70 * :sign f1 :size * 0.5 :sign rt 70 * :sign
+	  rt 7 * :sign f1 :size - 1 :sign lt 7 * :sign
+	  bk :size * 2
+	end
+	window clearscreen pu bk 150 pd
+	f1 25 1
+	</pre>
+
+	<i>Prompt Listing 1.</i>
+</blockquote>
+
+<h2>ChatGPT &mdash; Response:</h2>
+
+<img src="fig3.gif" />
+
+
+<h2>Reference LOGO Interpreter Output:</h2>
+
+<img src="fig4.gif" />
+
+<h2>Conclusion</h2>
+<p>Though the results here were clearly impacted by context provided by terms used in the LOGO program, the results between the visualized output and the true LOGO interpreter output are intriguing and borderline startling.</p>
+
+<p>It seems clear that, properly trained, a LLM+DALL-E hybrid could easily produce valid and accurate LOGO program output, and indeed we suggest that it may be possible to train an LLM to accurately produce the output of any programming language, or indeed perhaps all programming languages given sufficient training. The size-to-speed tradeoff of such a theoretical model are uncertain, as is the accuracy of the results, which remain open questions.</p>
+
+<h2>Further Study</h2>
+<p>It is proposed that further study in this area be performed through continued small-scale experimentation on publicly  available GPT-based models, as well as through larger-scale funded research into creation of a general-purpose universal-interpreter LLM system.</p>
+<p>For inquiries: isaac [at] mm.st</p>
+
+<br><br><br><br>
+<small>ChatGPT September 25 Version with DALL-E 3 Plugin</small>
+<small>&copy;2023. IJR. All rights reserved. This file and its contents are released under the Creative Commons license <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">BY-NC-SA</a>.</small>
